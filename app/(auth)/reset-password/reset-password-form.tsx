@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/button"
 import { TextField } from "@/components/form/text-field"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { ResetPasswordFields, resetPasswordAction } from "./page"
 
@@ -17,9 +18,14 @@ export function ResetPasswordForm({
     formState: { isSubmitted, isValid, errors },
   } = useForm<ResetPasswordFields>()
 
+  const router = useRouter()
+
   const onSubmit = handleSubmit(async (data) => {
     const response = await action(data)
-    console.log(response.error)
+    console.log(response)
+    if (response.ok) {
+      router.replace("/me")
+    }
   })
 
   return (

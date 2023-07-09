@@ -28,6 +28,7 @@ export async function resetPasswordAction({
 
   if (!user) {
     return {
+      ok: false,
       error: "No user found",
     }
   }
@@ -39,12 +40,14 @@ export async function resetPasswordAction({
 
   if (!user) {
     return {
+      ok: false,
       error: "No user found",
     }
   }
 
   if (!(await compare(oldPassword, dbUser!.password))) {
     return {
+      ok: false,
       error: "Password not match",
     }
   }
@@ -58,5 +61,7 @@ export async function resetPasswordAction({
     },
   })
 
-  redirect("/me")
+  return {
+    ok: true,
+  }
 }

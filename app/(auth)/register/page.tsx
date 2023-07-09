@@ -41,5 +41,7 @@ export async function registerAction({ email, password }: RegisterInputs) {
 
   setAuthCookies({ id, email })
 
-  redirect("/welcome")
+  return {
+    ok: true,
+  }
 }

@@ -23,28 +23,35 @@ export async function loginAction({ email, password }: LoginInputs) {
   "use server"
   try {
     const user = await prisma.user.findUnique({
-      where: { email: email },
+      where: { email },
       select: { id: true, email: true, password: true },
     })
 
+    console.log(user)
+
     if (!user) {
       return {
+        ok: false,
         error: "No user found",
       }
     }
 
     if (!(await bcrypt.compare(password, user.password))) {
       return {
+        ok: false,
         error: "Invalid credentials",
       }
     }
 
     setAuthCookies(user)
 
-    return redirect("/me")
+    return {
+      ok: true,
+    }
   } catch (error) {
     console.log(error)
     return {
+      ok: false,
       error: "No user found",
     }
   }

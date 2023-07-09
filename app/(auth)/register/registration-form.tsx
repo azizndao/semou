@@ -4,6 +4,7 @@ import { Button } from "@/components/button"
 import { TextField } from "@/components/form/text-field"
 import { Metadata } from "next"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { RegisterInputs, registerAction } from "./page"
 
@@ -24,9 +25,13 @@ export default function RegisterForm({
     formState: { errors, isSubmitting, isValid },
   } = useForm<RegisterInputs>()
 
+  const router = useRouter()
+
   const onSubmit = handleSubmit(async (data: RegisterInputs) => {
-    const response = await action(data)
-    console.log(response)
+    const { ok } = await action(data)
+    if (ok) {
+      router.replace("/me")
+    }
   })
 
   return (

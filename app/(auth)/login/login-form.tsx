@@ -4,6 +4,7 @@ import { Button } from "@/components/button"
 import { TextField } from "@/components/form/text-field"
 import { Metadata } from "next"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { LoginInputs, loginAction } from "./page"
 
@@ -19,9 +20,15 @@ export default function LoginForm({ action }: { action: typeof loginAction }) {
     formState: { errors, isSubmitting, isValid },
   } = useForm<LoginInputs>()
 
+  const router = useRouter()
+
   const onSubmit = handleSubmit(async (data: LoginInputs) => {
-    const response = await action(data)
-    console.log(response)
+    const { ok, error } = await action(data)
+    console.log({ ok, error })
+
+    if (ok) {
+      router.replace("/me")
+    }
   })
 
   return (
