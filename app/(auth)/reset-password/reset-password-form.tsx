@@ -31,9 +31,9 @@ export function ResetPasswordForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="flex flex-col max-w-lg w-full shadow-md py-12 rounded-xl px-8"
+      className="flex w-full max-w-lg flex-col rounded-xl px-8 py-12 shadow-md"
     >
-      <h1 className="text-4xl font-bold self-center mb-8">Reset password</h1>
+      <h1 className="mb-8 self-center text-4xl font-bold">Reset password</h1>
 
       <TextField
         label="Current password"

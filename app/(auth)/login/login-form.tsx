@@ -34,9 +34,9 @@ export default function LoginForm({ action }: { action: typeof loginAction }) {
   return (
     <form
       onSubmit={onSubmit}
-      className="max-w-lg mx-auto bg-white text-slate-900 dark:bg-neutral-900 dark:shadow-none dark:border border-neutral-800 dark:text-slate-200 px-8 py-12 mt-12 shadow-lg rounded-2xl flex flex-col"
+      className="mx-auto mt-12 flex max-w-lg flex-col rounded-2xl border-neutral-800 bg-white px-8 py-12 text-slate-900 shadow-lg dark:border dark:bg-neutral-900 dark:text-slate-200 dark:shadow-none"
     >
-      <h1 className="text-4xl font-bold self-center mb-6">Welcome back 👋</h1>
+      <h1 className="mb-6 self-center text-4xl font-bold">Welcome back 👋</h1>
 
       <TextField
         type="email"
@@ -77,14 +77,14 @@ export default function LoginForm({ action }: { action: typeof loginAction }) {
       <Button
         disabled={!isValid}
         type="submit"
-        className="self-center w-1/2 mt-6 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-6 w-1/2 self-center disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? "Loading..." : "Login"}
       </Button>
 
       <Link
         href="/register"
-        className="text-slate-600 font-medium text-sm underline self-center mt-8"
+        className="mt-8 self-center text-sm font-medium text-slate-600 underline"
       >
         register
       </Link>

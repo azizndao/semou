@@ -13,8 +13,8 @@ export function Button({
   return (
     <button
       className={twMerge(
-        "bg-neutral-900 text-white text-sm font-medium px-6 py-2.5 rounded-md only:hover:bg-neutral-900/90 dark:hover:bg-neutral-900/80 transition-colors inline-flex gap-4 items-center justify-center",
-        className
+        "inline-flex items-center justify-center gap-4 rounded-md bg-neutral-900 px-6 py-2.5 text-sm font-medium text-white transition-colors only:hover:bg-neutral-900/90 dark:hover:bg-neutral-900/80",
+        className,
       )}
       {...attrs}
     >
@@ -33,8 +33,8 @@ export function OutlinedButton({
   return (
     <button
       className={twMerge(
-        "border-2 border-blue-500 text-blue-500 text-sm font-medium px-6 py-2.5 rounded-md hover:border-blue-500/90 transition-colors inline-flex gap-4 items-center justify-center",
-        className
+        "inline-flex items-center justify-center gap-4 rounded-md border-2 border-blue-500 px-6 py-2.5 text-sm font-medium text-blue-500 transition-colors hover:border-blue-500/90",
+        className,
       )}
       {...attrs}
     >
@@ -47,7 +47,7 @@ export function OutlinedButton({
 function LoadingSpin() {
   return (
     <svg
-      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+      className="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

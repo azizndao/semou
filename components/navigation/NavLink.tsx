@@ -18,8 +18,8 @@ export const NavLink = ({
       <Link
         href={href}
         className={twMerge(
-          "hover:underline decoration-blue-500 text-sm",
-          active && "underline decoration-4 font-medium"
+          "text-sm decoration-blue-500 hover:underline",
+          active && "font-medium underline decoration-4",
         )}
       >
         {children}

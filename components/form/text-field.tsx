@@ -16,9 +16,9 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
       <p className="px-1">{label}</p>
       <input
         className={twMerge(
-          "px-4 py-1.5 border dark:border-neutral-800 rounded-md bg-slate-50 dark:bg-neutral-900 dark:text-neutral-200 outline-none focus:ring-2 focus:ring-blue-500",
+          "rounded-md border bg-slate-50 px-4 py-1.5 outline-none focus:ring-2 focus:ring-blue-500 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-200",
           error && "ring-2 ring-red-400",
-          className
+          className,
         )}
         type={type}
         {...attrs}

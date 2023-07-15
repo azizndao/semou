@@ -37,9 +37,9 @@ export default function RegisterForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="max-w-lg mx-auto bg-white px-8 py-12 mt-12 shadow-lg rounded-2xl flex flex-col"
+      className="mx-auto mt-12 flex max-w-lg flex-col rounded-2xl bg-white px-8 py-12 shadow-lg"
     >
-      <h1 className="text-4xl font-bold self-center mb-6">Registration page</h1>
+      <h1 className="mb-6 self-center text-4xl font-bold">Registration page</h1>
 
       <TextField
         type="email"
@@ -99,12 +99,12 @@ export default function RegisterForm({
         loading={isSubmitting}
         disabled={!isValid}
         type="submit"
-        className="self-center w-1/2 mt-6 disabled:opacity-70"
+        className="mt-6 w-1/2 self-center disabled:opacity-70"
       >
         {isSubmitting ? "Loading..." : "Register"}
       </Button>
 
-      <Link href="/login" className="text-sm self-center mt-12">
+      <Link href="/login" className="mt-12 self-center text-sm">
         Login
       </Link>
     </form>

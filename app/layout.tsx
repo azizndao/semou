@@ -35,8 +35,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={twMerge(
-          "bg-slate-50 text-slate-700 dark:bg-neutral-900 dark:text-slate-100;",
-          inter.className
+          "dark:text-slate-100; bg-slate-50 text-slate-700 dark:bg-neutral-900",
+          inter.className,
         )}
       >
         <Header />
